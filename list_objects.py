@@ -17,12 +17,12 @@ def list_objects_keys(client, bucket, prefix=''):
 
     return keys
 
+if __name__ == '__main__':
+    s3 = boto3.client('s3')
 
-s3 = boto3.client('s3')
-
-response = list_objects_keys(s3, 'jvelazquez-boto3-06202023', 'folder/')
-print(response)
+    response = list_objects_keys(s3, 'jvelazquez-boto3-06202023', 'folder/')
+    print(response)
 
 
-response = filter_objects_extension(s3, 'jvelazquez-boto3-06202023', '/')
-print(response)
+    response = filter_objects_extension(s3, 'jvelazquez-boto3-06202023', '/')
+    print(response)
