@@ -9,7 +9,7 @@ def filter_objects_extension(client, bucket, extension):
 
     return keys
 
-def list_objects_keys(client, bucket, prefix=''):
+def list_object_keys(client, bucket, prefix=''):
     keys = []
     response = client.list_objects_v2(Bucket=bucket, Prefix=prefix)
     for content in response['Contents']:
@@ -20,7 +20,7 @@ def list_objects_keys(client, bucket, prefix=''):
 if __name__ == '__main__':
     s3 = boto3.client('s3')
 
-    response = list_objects_keys(s3, 'jvelazquez-boto3-06202023', 'folder/')
+    response = list_object_keys(s3, 'jvelazquez-boto3-06202023', 'folder/')
     print(response)
 
 
