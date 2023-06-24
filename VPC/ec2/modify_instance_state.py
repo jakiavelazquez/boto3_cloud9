@@ -32,5 +32,5 @@ def terminate_instance(client, instance_id):
 if __name__ == '__main__':
     instance_id = 'i-011a811e4161aa6a9'
     
-    ec2 = boto3.client('ec2')
-    terminate_instance(ec2, instance_id)
+ec2 = boto3.client('ec2')
+terminate_instance(ec2, instance_id)
